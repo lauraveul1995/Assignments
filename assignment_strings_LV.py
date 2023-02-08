@@ -14,12 +14,11 @@ report = f"{scorer_1} scored in the {goal_0}nd minute\n{scorer_2} scored in the 
 
 # Part 2
 player = "Ruud Gullit"
-first_name_index = player.find("Ruud")
-first_name = player[0:4]
-last_name_index = player.find("Gullit")
-last_name = player[5:]
+index = player.find(" ")
+first_name = player[:index]
+last_name = player[(index+1):]
 last_name_len = len(last_name)
-name_short = f"{player[0]}. {player[5:]}"
+name_short = f"{first_name[0]}. {last_name}"
 chant = ((first_name+"! ")*len(first_name)).rstrip()
-good_chant = chant[22] != " "
+good_chant = chant[-1] != " "
 
